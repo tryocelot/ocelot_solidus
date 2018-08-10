@@ -1,0 +1,3 @@
+module SolidushubAnalytics
+  # Your code goes here...
+end
