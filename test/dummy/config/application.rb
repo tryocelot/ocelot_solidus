@@ -3,7 +3,7 @@ require_relative 'boot'
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "solidushub_analytics"
+require "ocelot_solidus"
 
 module Dummy
   class Application < Rails::Application

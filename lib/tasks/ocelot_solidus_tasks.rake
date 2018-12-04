@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :solidushub_analytics do
+# task :ocelot_solidus do
 #   # Task goes here
 # end
