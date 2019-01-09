@@ -3,7 +3,7 @@ module OcelotSolidus
     extend ActiveSupport::Concern
 
     included do
-      after_touch do
+      after_commit do
         OcelotSolidus::OrderJob.perform_later(self)
       end
     end
