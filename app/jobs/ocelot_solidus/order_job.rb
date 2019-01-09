@@ -55,6 +55,7 @@ module OcelotSolidus
       }
 
       http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
       request = Net::HTTP::Post.new(uri.request_uri, headers)
       request.body = { query: query, variables: variables }.to_json
 
