@@ -5,7 +5,7 @@ Spree::Order.class_eval do
     end
 
     after_update_commit do
-      OcelotSolidus::Orders::UpdateJob.perform_now self
+      OcelotSolidus::Orders::CreateJob.perform_now self
     end
 
     after_destroy_commit do
