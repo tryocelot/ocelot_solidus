@@ -3,6 +3,7 @@ PATH
   specs:
     ocelot_solidus (0.1.0)
       solidus_core (~> 2.7.0)
+      thor
 
 GEM
   remote: https://rubygems.org/

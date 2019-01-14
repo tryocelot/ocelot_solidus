@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'ocelot_solidus/cli'
+OcelotSolidus::Cli.start(ARGV)
