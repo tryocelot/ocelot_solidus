@@ -4,8 +4,8 @@ module OcelotSolidus
     engine_name 'ocelot_solidus'
 
     config.to_prepare do
-      Dir.glob(File.join(File.dirname(__FILE__), '../../../app/models/**/*_decorator.rb')) do |f|
-        Rails.configuration.cache_classes ? require(f) : load(f)
+      Dir.glob(File.join(File.dirname(__FILE__), "../../app/**/*_decorator*.rb")) do |c|
+        Rails.configuration.cache_classes ? require(c) : load(c)
       end
     end
   end
