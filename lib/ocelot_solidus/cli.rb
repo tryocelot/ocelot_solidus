@@ -37,9 +37,18 @@ module OcelotSolidus
         f.puts <<~RUBY
           OcelotSolidus.setup do |config|
             config.api_key = '#{api_key}'
+            config.enabled = Rails.env.production?
           end
         RUBY
       end
+
+      say <<~OUT, :green
+        An initializer for Ocelot has been created at:
+
+          #{RELATIVE_CONFIG_PATH}
+
+        Please visit this config and update it to best suit your needs.
+      OUT
     end
 
     def config_path
@@ -47,7 +56,7 @@ module OcelotSolidus
     end
 
     def print_warning
-      @printed ||= say <<~OUT, :green
+      @printed ||= say <<~OUT, :yellow
         A #{RELATIVE_CONFIG_PATH} already exists for your application.
         Visit your dashboard at https://ocelot.cat or remove the initializer
         to set it up as a new store on Ocelot.
