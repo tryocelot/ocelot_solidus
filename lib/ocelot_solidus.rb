@@ -10,6 +10,9 @@ module OcelotSolidus
   mattr_accessor :api_key
   @@api_key = ''
 
+  mattr_accessor :enabled
+  @@enabled = false
+
   def self.setup
     yield self
   end
