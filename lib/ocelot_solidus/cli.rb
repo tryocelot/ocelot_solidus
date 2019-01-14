@@ -36,8 +36,21 @@ module OcelotSolidus
       File.open(path, 'w') do |f|
         f.puts <<~RUBY
           OcelotSolidus.setup do |config|
+            # Reminder: Please take good care in where you store this key.
+            #
             config.api_key = '#{api_key}'
+
+            # Any functionality that occurs with Ocelot pushing data up to
+            # ocelot.cat will check this config setting.
+            #
             config.enabled = Rails.env.production?
+
+            # Ocelot pushes data up with ActiveJob in the `ocelot` queue. If you
+            # are using Sidekiq, please add the `ocelot` queue as a low priority
+            # or configure it to a specific queue in your config. The default
+            # queue is `:ocelot`.
+            #
+            # config.queue = :ocelot
           end
         RUBY
       end

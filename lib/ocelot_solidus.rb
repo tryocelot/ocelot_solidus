@@ -13,6 +13,9 @@ module OcelotSolidus
   mattr_accessor :enabled
   @@enabled = false
 
+  mattr_accessor :queue
+  @@queue = :ocelot
+
   def self.setup
     yield self
   end
