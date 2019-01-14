@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  s.add_dependency 'solidus_core', '~> 2.7.0'
+  s.add_dependency 'solidus_core', '~> 2.0'
   s.add_dependency 'thor'
 
   s.add_development_dependency 'sqlite3'
